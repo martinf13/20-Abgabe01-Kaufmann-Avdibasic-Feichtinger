@@ -2,7 +2,7 @@
 
 **ConfigTesting1 Repository**
 
-Link: [title](https://github.com/martinf13/configTesting1.git)
+Link: [title](https://github.com/martinf13/configTesting1.git)[/title]
 This Repository contains the project "Drinks" for KONFIG1 exercise 1.
 
 **Contributors**
