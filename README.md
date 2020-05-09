@@ -1,14 +1,13 @@
-# configTesting1 - Project Drinks #
+# 20-Abgabe01-Kaufmann-Avdibasic-Feichtinger - Project Drinks #
 
-**ConfigTesting1 Repository**
+**20-Abgabe01-Kaufmann-Avdibasic-Feichtinger Repository**
 
-Link: [title](https://github.com/martinf13/configTesting1.git)[/title]
-This Repository contains the project "Drinks" for KONFIG1 exercise 1.
+This [Repository](https://github.com/martinf13/configTesting1.git) contains the project "Drinks" for KONFIG1 exercise 1.
 
 **Contributors**
-- [Markus Kaufmann] [title](https://github.com/markuskaufmann87 "Markus Kaufmann")
-- [Martin Feichtinger] [title](https://github.com/martinf13 "Martin Feichtinger")
-- [Tarik Avdibasic] [title](https://github.com/TarikAvdibasic90 "Tarik Avdibasic")
+- [Markus Kaufmann](https://github.com/markuskaufmann87 "Markus Kaufmann")
+- [Martin Feichtinger](https://github.com/martinf13 "Martin Feichtinger")
+- [Tarik Avdibasic](https://github.com/TarikAvdibasic90 "Tarik Avdibasic")
 
 **Course:**
 
