@@ -1,6 +1,13 @@
 package at.fhj.iit;
 
+import java.util.List;
+import java.util.TreeMap;
+
 public class Cocktail extends Drink {
+
+    private List<Liquid> listOfLiquids = new List<Liquid>();
+    private TreeMap<Integer, String> recipe = new TreeMap<Integer, String>;
+
     /**
      * Creates a Drink object with given name
      *
@@ -17,7 +24,11 @@ public class Cocktail extends Drink {
      */
     @Override
     public double getVolume() {
-        return 0;
+        double volume = 0;
+        for(int i=0;i<listOfLiquids.size();i++){
+           volume += listOfLiquids.get(i).getVolume();
+        }
+        return volume;
     }
 
     /**
@@ -27,7 +38,11 @@ public class Cocktail extends Drink {
      */
     @Override
     public double getAlcoholPercent() {
-        return 0;
+        double percentage = 0;
+        for(int i=0;i<listOfLiquids.size();i++){
+            percentage += listOfLiquids.get(i).getAlcoholPercent();
+        }
+        return percentage;
     }
 
     /**
@@ -37,6 +52,21 @@ public class Cocktail extends Drink {
      */
     @Override
     public boolean isAlcoholic() {
-        return false;
+        if(getAlcoholPercent() > 0){
+            return true;
+        } else return false;
     }
+
+    /**
+     * adds a Liquid to the Cocktail's listOfLiquids.
+     *
+     * @param l Object of Type Liquid that should be added to the Cocktail.
+     */
+    public void addLiquid(Liquid l) {
+        listOfLiquids.add(l);
+    }
+
+
+
+
 }
