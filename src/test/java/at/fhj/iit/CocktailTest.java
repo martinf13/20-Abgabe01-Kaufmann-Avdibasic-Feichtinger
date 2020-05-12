@@ -49,6 +49,7 @@ class CocktailTest {
     @DisplayName("Testing constructor name of cubaLibre")
     public void testCocktailCubaLibre(){
         assertEquals("Cuba Libre",cubaLibre.name);
+
     }
 
     @Test
@@ -70,15 +71,13 @@ class CocktailTest {
     @Test
     @DisplayName("Testing functionality of the rounding on 2 decimal for cubaLibre")
     void testRoundForCubaLibre() {
-            assertEquals(18.0, cubaLibre.round(cubaLibre.getVolume(), 2),0.01, "" +
-                    "Excpected value is 18.0, actual value is " + cubaLibre.round(cubaLibre.getVolume(), 2));
+            assertEquals(18.0, cubaLibre.round(cubaLibre.getVolume(), 2),0.01);
     }
 
     @Test
     @DisplayName("Testing functionality of the rounding on 2 decimal for virginColada")
     void testRoundForVirginColada() {
-        assertEquals(22.0, virginColada.round(virginColada.getVolume(), 2),0.01, "" +
-                "Excpected value is 22.0, actual value is " + virginColada.round(virginColada.getVolume(), 2));
+        assertEquals(22.0, virginColada.round(virginColada.getVolume(), 2),0.01);
     }
 
     @Test
@@ -94,10 +93,17 @@ class CocktailTest {
     }
 
     @Test
-    void isAlcoholic() {
+    @DisplayName("testing if alcoholic Cocktail is alcoholic")
+    void testIfAlcoholic() {
+        assertTrue(cubaLibre.isAlcoholic(), "Cuba Libre should be alcoholic!");
     }
 
     @Test
-    void addLiquid() {
+    @DisplayName("testing if all liquids are saved in listOfLiquids")
+    void testListOfLiquids() {
+        assertEquals("White rum", cubaLibre.getListOfLiquids().get(0).getName());
+        assertEquals("Cola", cubaLibre.getListOfLiquids().get(1).getName());
+        assertEquals("Fresh lime juice", cubaLibre.getListOfLiquids().get(2).getName());
     }
+
 }

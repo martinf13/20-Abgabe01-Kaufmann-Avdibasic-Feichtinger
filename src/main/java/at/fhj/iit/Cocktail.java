@@ -140,7 +140,13 @@ public class Cocktail extends Drink {
     }
 
 
+    public List<Liquid> getListOfLiquids() {
+        return listOfLiquids;
+    }
 
+    public TreeMap<Integer, String> getRecipe() {
+        return recipe;
+    }
 
 
 }
