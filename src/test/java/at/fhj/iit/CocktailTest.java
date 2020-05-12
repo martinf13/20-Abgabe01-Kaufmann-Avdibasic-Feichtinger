@@ -61,8 +61,6 @@ class CocktailTest {
     @DisplayName("controlling if building a recipe works")
     void buildRecipeTest() {
 
-
-
     }
 
 
@@ -87,10 +85,23 @@ class CocktailTest {
         assertEquals(18, cubaLibre.getVolume(), 0.01);
     }
 
+    @Test
+    @DisplayName("Testing the size of the volume of the Cocktail virginColada")
+    void testGetVolumeOfVirginColada() {
+        assertEquals(22.0, virginColada.getVolume(), 0.01);
+    }
+
 
     @Test
-    void getAlcoholPercent() {
+    @DisplayName("Testing the percentage of Alcohol for cubaLibre")
+    void getAlcoholPercentForCubaLibra() {
+        assertEquals(8.89, cubaLibre.getAlcoholPercent(), 0.01);
+    }
 
+    @Test
+    @DisplayName("Testing the percentage of Alcohol for virginColada")
+    void getAlcoholPercentVirginColada() {
+        assertEquals(0.0, virginColada.getAlcoholPercent(), 0.01);
     }
 
     @Test
