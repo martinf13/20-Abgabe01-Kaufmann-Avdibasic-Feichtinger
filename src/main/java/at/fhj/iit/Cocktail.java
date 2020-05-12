@@ -7,7 +7,8 @@ import java.util.TreeMap;
 /**
  *
  * Class represents a Cocktail which is a mix of different liquids that extends Drink
- *
+ * @author Markus Kaufmann
+ * @author Tarik Avdibasic
  */
 
 
@@ -139,11 +140,18 @@ public class Cocktail extends Drink {
         listOfLiquids.add(l);
     }
 
-
+    /**
+     * Getter method for the List<Liquid>
+     * @return the Liquid value of the listOfLiquids
+     */
     public List<Liquid> getListOfLiquids() {
         return listOfLiquids;
     }
 
+    /**
+     * Getter method for the TreeMap<Integer, String> recipe
+     * @return the TreeMap value of the recipe
+     */
     public TreeMap<Integer, String> getRecipe() {
         return recipe;
     }
