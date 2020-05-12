@@ -10,48 +10,24 @@
 
   <name>Drinks</name>
   <url>
-    https://github.com/michaelulm/software-configuration-management/tree/master/test-automation/junit5/Drinks
+    https://github.com/martinf13/20-Abgabe01-Kaufmann-Avdibasic-Feichtinger.git
   </url>
 
   <developers>
     <developer>
-      <id>michaelulm</id>
-      <name>Michael Ulm</name>
-      <email>michael.ulm@fh-joanneum.at</email>
-      <url>https://www.michael-ulm.at</url>
-      <organization>FH JOANNEUM GmbH</organization>
-      <organizationUrl>https://www.fh-joanneum.at/iit</organizationUrl>
-      <roles>
-        <role>Lecturer</role>
-      </roles>
-      <timezone>Europe/Vienna</timezone>
-      <properties>
-        <picUrl>https://avatars2.githubusercontent.com/u/15637184</picUrl>
-      </properties>
+      <id>markuskaufmann87</id>
+      <name>Markus Kaufmann</name>
+      <email>markus.kaufmann@edu.campus02.at</email>
     </developer>
     <developer>
-      <id>chrishofer</id>
-      <name>Christian Hofer</name>
-      <email>christian.hofer@campus02.at</email>
-      <organization>CAMPUS 02 Fachhochschule der Wirtschaft GmbH</organization>
-      <organizationUrl>https://www.campus02.at/wirtschaftsinformatik</organizationUrl>
-      <roles>
-        <role>Lecturer &amp; Research Scientist</role>
-      </roles>
-      <timezone>Europe/Vienna</timezone>
+      <id>martinf13</id>
+      <name>Martin Feichtinger</name>
+      <email>martin.feichtinger@edu.campus02.at</email>
     </developer>
     <developer>
-      <id>Rigbin</id>
-      <name>Harald Schwab</name>
-      <email>harald.schwab2@fh-joanneum.at</email>
-      <url>https://github.com/Rigbin</url>
-      <organization>FH JOANNEUM GmbH</organization>
-      <organizationUrl>https://www.fh-joanneum.at/iit</organizationUrl>
-      <roles>
-        <role>Researcher</role>
-      </roles>
-      <timezone>Europe/Vienna</timezone>
-      <properties/>
+      <id>TarikAvdibasic90</id>
+      <name>Tarik Avdibasic</name>
+      <email>tarik.avdibasic@edu.campus02.at</email>
     </developer>
   </developers>
 

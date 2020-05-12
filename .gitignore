@@ -1,5 +1,6 @@
 # ignore produced folders/files of intelliJ
 /.idea/
+*.iml
 # ignore build target files .class
 /target/
 *.class
