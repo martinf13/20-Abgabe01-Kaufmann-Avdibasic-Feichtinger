@@ -10,8 +10,6 @@ import java.util.TreeMap;
  * @author Markus Kaufmann
  * @author Tarik Avdibasic
  */
-
-
 public class Cocktail extends Drink {
 
     /**
@@ -38,21 +36,12 @@ public class Cocktail extends Drink {
         super(name);
     }
 
-    /**
-     * Generates the toString output of the recipe
-     */
-
-    @Override
-    public String toString() {
-        return "This is a guide for your cocktail: "  +"\n"+ recipe;
-    }
 
     /**
      * Adding the string text to the recipe and automatically increasing the index(step)
      *
      * @param text to build up the recipe
      */
-
     public void buildRecipe(String text) {
 
             recipe.put(++index, text);
@@ -63,16 +52,11 @@ public class Cocktail extends Drink {
      * Calculates and rounds the number of decimals
      *
      * @param value	- value of the double that needs to be rounded
-     * @param places - number of decimals that should be rounded
      * @return double value with int places number of decimals
      */
+    public static double round(double value) {
 
-    public static double round(double value, int places) {
-        try {
-            if (places < 0) throw new IllegalArgumentException();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
+        int places = 2;
 
         long factor = (long) Math.pow(10, places);
         value = value * factor;
@@ -85,14 +69,13 @@ public class Cocktail extends Drink {
      *
      * @return the volume of drink in liter rounded on two decimals
      */
-
     @Override
     public double getVolume() {
         double volume = 0;
         for(int i=0;i<listOfLiquids.size();i++){
             volume += listOfLiquids.get(i).getVolume();
         }
-        return round(volume,2) * 100;
+        return round(volume) * 100;
     }
 
     /**
@@ -100,8 +83,6 @@ public class Cocktail extends Drink {
      *
      * @return alcohol volume percent rounded on 2 decimals (e.g. 50)
      */
-
-
     @Override
     public double getAlcoholPercent() {
         double percentage = 0;
@@ -114,7 +95,7 @@ public class Cocktail extends Drink {
             sumVolume += listOfLiquids.get(i).getVolume();
         }
         percentage = (pureAlc / sumVolume) * 100;
-        return round(percentage,2);
+        return round(percentage);
     }
 
 

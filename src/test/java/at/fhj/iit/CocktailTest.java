@@ -90,7 +90,7 @@ class CocktailTest {
     @Test
     @DisplayName("Testing functionality of the round method for cubaLibre")
     void testRoundForCubaLibre() {
-            assertEquals(18.0, cubaLibre.round(cubaLibre.getVolume(), 2),0.01);
+            assertEquals(18.0, Cocktail.round(cubaLibre.getVolume()),0.01);
     }
 
     /**
@@ -100,7 +100,7 @@ class CocktailTest {
     @Test
     @DisplayName("Testing functionality of the round method for virginColada")
     void testRoundForVirginColada() {
-        assertEquals(22.0, virginColada.round(virginColada.getVolume(), 2),0.01);
+        assertEquals(22.0, Cocktail.round(virginColada.getVolume()),0.01);
     }
 
     /**
@@ -151,6 +151,16 @@ class CocktailTest {
     }
 
     /**
+     * Testing if the Cocktail object contains Alcohol or not
+     * gives us boolean value back.
+     */
+    @Test
+    @DisplayName("Testing the isAlcoholic method for the Cocktail object")
+    void testIfNonAlcoholic() {
+        assertFalse(virginColada.isAlcoholic(), "virgin colada should be non-alcoholic!");
+    }
+
+    /**
      * Testing if the liquids are saved correctly in the ListOfLiquids.
      */
     @Test
@@ -160,5 +170,6 @@ class CocktailTest {
         assertEquals("Cola", cubaLibre.getListOfLiquids().get(1).getName());
         assertEquals("Fresh lime juice", cubaLibre.getListOfLiquids().get(2).getName());
     }
+
 
 }
