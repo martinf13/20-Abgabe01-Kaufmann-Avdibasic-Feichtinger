@@ -54,12 +54,7 @@ public class Cocktail extends Drink {
 
     public void buildRecipe(String text) {
 
-        if (index != 0) {
-            index++;
-            recipe.put(index, text);
-        }else if ( index == 0) {
-            index++;
-            recipe.put(index, text);
+            recipe.put(++index, text);
         }
     }
 
