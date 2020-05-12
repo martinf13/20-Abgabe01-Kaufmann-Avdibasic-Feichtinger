@@ -59,9 +59,10 @@ class CocktailTest {
     }
 
     @Test
-    @DisplayName("controlling if building a recipe works")
+    @DisplayName("controlling if buildRecipe gives us correct Integer and String value of the object")
     void buildRecipeTest() {
-
+        assertEquals(" Fill the glass with ice", cubaLibre.getRecipe().get(1));
+        assertEquals("Stir it gently!", cubaLibre.getRecipe().get(5));
     }
 
 
