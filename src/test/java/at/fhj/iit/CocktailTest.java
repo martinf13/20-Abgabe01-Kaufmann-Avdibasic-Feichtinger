@@ -61,7 +61,7 @@ class CocktailTest {
     @Test
     @DisplayName("controlling if building a recipe works")
     void buildRecipeTest() {
-
+        cubaLibre.getRecipe().get(0);
     }
 
 

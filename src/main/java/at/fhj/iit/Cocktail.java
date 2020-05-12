@@ -9,8 +9,6 @@ import java.util.TreeMap;
  * Class represents a Cocktail which is a mix of different liquids that extends Drink
  *
  */
-
-
 public class Cocktail extends Drink {
 
     /**
@@ -38,20 +36,10 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * Generates the toString output of the recipe
-     */
-
-    @Override
-    public String toString() {
-        return "This is a guide for your cocktail: "  +"\n"+ recipe;
-    }
-
-    /**
      * Adding the string text to the recipe and automatically increasing the index(step)
      *
      * @param text to build up the recipe
      */
-
     public void buildRecipe(String text) {
 
             recipe.put(++index, text);
@@ -84,7 +72,6 @@ public class Cocktail extends Drink {
      *
      * @return the volume of drink in liter rounded on two decimals
      */
-
     @Override
     public double getVolume() {
         double volume = 0;
@@ -99,8 +86,6 @@ public class Cocktail extends Drink {
      *
      * @return alcohol volume percent rounded on 2 decimals (e.g. 50)
      */
-
-
     @Override
     public double getAlcoholPercent() {
         double percentage = 0;
@@ -140,6 +125,10 @@ public class Cocktail extends Drink {
     }
 
 
+    /**
+     *
+     * @return retur
+     */
     public List<Liquid> getListOfLiquids() {
         return listOfLiquids;
     }
