@@ -72,7 +72,11 @@ public class Cocktail extends Drink {
      */
 
     public static double round(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
+        try {
+            if (places < 0) throw new IllegalArgumentException();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
 
         long factor = (long) Math.pow(10, places);
         value = value * factor;
