@@ -1,2 +1,5 @@
-# Default ignored files
+# ignore produced folders/files of intelliJ
 /.idea/
+# ignore build target files .class
+/target/
+*.class
