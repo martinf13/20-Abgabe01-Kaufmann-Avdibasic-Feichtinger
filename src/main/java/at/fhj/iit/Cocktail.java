@@ -9,6 +9,7 @@ import java.util.TreeMap;
  * Class represents a Cocktail which is a mix of different liquids that extends Drink
  * @author Markus Kaufmann
  * @author Tarik Avdibasic
+ * @version %I%, %G%
  */
 public class Cocktail extends Drink {
 

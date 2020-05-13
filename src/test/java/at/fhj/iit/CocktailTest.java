@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Markus Kaufmann
  * @author Tarik Avdibasic
+ * @version %I%, %G%
  */
 @DisplayName("Testing the implementation of Cocktail")
 class CocktailTest {

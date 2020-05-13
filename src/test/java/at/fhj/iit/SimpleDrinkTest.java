@@ -9,7 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Test class for testing SimpleDrink
  * @author Markus Kaufmann
- * @version 1.0
+ * @author Tarik Avdibasic
+ * @version %I%, %G%
  */
 @DisplayName("Testing SimpleDrink")
 class SimpleDrinkTest {
@@ -45,6 +46,16 @@ class SimpleDrinkTest {
         assertEquals("Seidl Bier", drink2.name, "expected: Seidl Bier, test: "+drink2.name);
         assertEquals(0.3, drink2.getVolume(), "expected: 0.3, test: "+drink2.getVolume());
         assertTrue(drink2.isAlcoholic(), "beer should be alcoholic!!");
+    }
+
+    /**
+     * Testing the getter alcohol percentage
+     *
+     */
+    @Test
+    @DisplayName("test getting alcohol percentage")
+    void testGetAlcoholPercentage(){
+        assertEquals(3, drink2.getAlcoholPercent());
     }
 
     /**

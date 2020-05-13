@@ -7,6 +7,7 @@ import java.util.List;
  *
  * Class represents a Shake, which containts 2 fruits and a liquid
  * @author Martin Feichtinger
+ * @version %I%, %G%
  */
 public class Shake extends Drink {
 
