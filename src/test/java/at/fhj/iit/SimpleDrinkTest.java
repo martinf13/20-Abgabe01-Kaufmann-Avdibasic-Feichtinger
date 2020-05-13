@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Testing SimpleDrink")
 class SimpleDrinkTest {
 
-    private SimpleDrink drink1, drink2;
+    private SimpleDrink drink1, drink2,drink3;
 
     @BeforeEach
     public void setup(){
@@ -22,12 +22,15 @@ class SimpleDrinkTest {
         drink2 = new SimpleDrink("Seidl Bier", new Liquid("beer",0.3,3));
     }
 
+    /**
+     * Testing the default Constructor
+     */
     @Test
     @DisplayName("testing default-Constructor")
     public void testDefaultConstr(){
         try{
-            assertEquals(drink1.getVolume(), null);
-            assertEquals(drink1.getAlcoholPercent(), null);
+            assertEquals(drink3.getVolume(), null);
+            assertEquals(drink3.getAlcoholPercent(), null);
         } catch (NullPointerException e){
             e.printStackTrace();
         }
