@@ -45,3 +45,19 @@ Liquids contain different Volume and Alcohol percentage.
 
 -How to correctly build up the “real world” Cocktail is described through the buildRecipe method, where we in value of String describe the steps needed to be done to make the Cocktail taste perfectly.
 
+### Implementation 2 – Shake ###
+Class **"Shake"** extends the **"Drink"** class. Shake class represents a Shake which contains 2 fruits and a liquid. 
+
+Usually Shakes do not contain Alcohol percentage, but in this case we have used it for testing purposes. It contains one Liquid, which is water or milk.
+
+-To calculate the correct Volume and Alcohol percent we have implemented the methods from Drink class and updated it to the current state of Cocktail objects. 
+
+-For the calculation of the Alcohol percentage first we have calculate the pure alcohol percent of all liquids and then divided it through the sum of Volume. The result is multiplied with 100 to get the Alcohol percent in liter.
+
+-To get the correct volume of the Cocktail, we have in getVolume added all volumes of the liquids together and the result multiplied with 100 to get the Volume in liter.
+
+-In the addLiquids method we are just adding a liquidi to the linked list, which is required for the Shake
+
+-In the setFruits method we are able to add 2 fruits. If we have more then 2 fruits we will receive an error message.
+
+-In the constructor we declare the list of liquids and the String Array fruits with a size of 2
