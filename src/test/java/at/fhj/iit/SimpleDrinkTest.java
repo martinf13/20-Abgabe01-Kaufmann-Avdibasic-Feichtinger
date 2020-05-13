@@ -22,6 +22,17 @@ class SimpleDrinkTest {
         drink2 = new SimpleDrink("Seidl Bier", new Liquid("beer",0.3,3));
     }
 
+    @Test
+    @DisplayName("testing default-Constructor")
+    public void testDefaultConstr(){
+        try{
+            assertEquals(drink1.getVolume(), null);
+            assertEquals(drink1.getAlcoholPercent(), null);
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Testing an alcoholic drink
      */
