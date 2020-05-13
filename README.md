@@ -61,3 +61,13 @@ Usually Shakes do not contain Alcohol percentage, but in this case we have used 
 -In the setFruits method we are able to add 2 fruits. If we have more then 2 fruits we will receive an error message.
 
 -In the constructor we declare the list of liquids and the String Array fruits with a size of 2
+
+
+
+We added a little code snippet below to show how we tested, if a created non-alcoholic Cocktail virginColada has no alcohol in it.
+
+```java
+    void testIfNonAlcoholic() {
+        assertFalse(virginColada.isAlcoholic(), "virgin colada should be non-alcoholic!");
+    }
+```
