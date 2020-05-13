@@ -1,29 +1,92 @@
 package at.fhj.iit;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+/**
+ *
+ * Class represents a Shake, which containts 2 fruits and a liquid
+ * @author Martin Feichtinger
+ */
 public class Shake extends Drink {
 
-    private static List<ShakeNutritionTable> nutritionalTable = new ArrayList<ShakeNutritionTable>();
-    private static String path = "Shake.xlsx";
-    private static  File m;
     /**
-     * Creates a Drink object with given name
+     * Uses a String array to save fruits. The size is getting declared in the constructor
+     * Uses a List where liquids will be saved
+     * Created an protected index, to add to the String Array fruits. If index higher then 1 it we will
+     * receive an exception as only 2 fruits are allowed
+     */
+    private String[] fruits;
+    private List<Liquid> listOfLiquids;
+    protected int index = 0;
+
+
+    /**
+     * Creates a Shake object with given name and declares the fruits Array with the size of 2
+     * Additionally we are creating a "listofLiquids" Array List to save the liquids we use for the Shake.
      *
      * @param name name of the drink
      */
     public Shake(String name) {
         super(name);
+        fruits = new String[2];
+        listOfLiquids = new ArrayList<>();
+
+    }
+
+    /**
+     * Method to get each fruit
+     * @return each fruit saved in the fruits String Array
+     */
+    public String getFruits() {
+        String m = "";
+        for (int i = 0; i < fruits.length ; i++) {
+            if(fruits[i] != null) {
+                if(i == 0) {
+                    m += fruits[i];
+                }
+                else m += ", " + fruits[i];
+            }
+        }
+        return m;
+    }
+
+    /**
+     *Method to save fruits in the String Array
+     * @param fruit1 - String which is being saved in the fruits Array List. Maximum 2 fruits are allowed otherwise
+     *               you will receive a warning/exception
+     */
+    public void setFruits(String fruit1) {
+        try {
+            this.fruits[index] = fruit1;
+            index++;
+        }catch(IndexOutOfBoundsException e) {
+            System.out.println("Only 2 fruits are allowed in this specific Shake");
+        }
+    }
+
+    /**
+     * Getter for the Array
+     * @return the whole fruits String Array
+     */
+    public String[] getStringArray() {
+        return this.fruits;
+    }
+
+    /**
+     * Getter for the List of Liquids
+     * @return the whole List of Liquids
+     */
+    public List<Liquid> getListOfLiquids() {
+       return listOfLiquids;
+    }
+
+    /**
+     * Method to add a Liquid to the List of Liquids
+     * @param liquid Object of Type  Liquid that will be added to the list
+     */
+    public void addLiquid(Liquid liquid) {
+        listOfLiquids.add(liquid);
     }
 
     /**
@@ -33,8 +96,13 @@ public class Shake extends Drink {
      */
     @Override
     public double getVolume() {
-        return 0;
+        double volume = 0;
+        for(int i=0;i<listOfLiquids.size();i++){
+            volume += listOfLiquids.get(i).getVolume();
+        }
+        return Math.round(volume * 100.00) / 100.00;
     }
+
 
     /**
      * Calculates and returns the alcohol percentage
@@ -43,7 +111,17 @@ public class Shake extends Drink {
      */
     @Override
     public double getAlcoholPercent() {
-        return 0;
+        double percentage = 0;
+        double pureAlc = 0;
+        double sumVolume = 0;
+        for(int i=0;i<listOfLiquids.size();i++){
+            pureAlc += listOfLiquids.get(i).getVolume() * (listOfLiquids.get(i).getAlcoholPercent() / 100);
+        }
+        for(int i=0;i<listOfLiquids.size();i++){
+            sumVolume += listOfLiquids.get(i).getVolume();
+        }
+        percentage = (pureAlc / sumVolume) * 100;
+        return Math.round(percentage / getVolume() * 100.00) / 100.00 ;
     }
 
     /**
@@ -53,49 +131,9 @@ public class Shake extends Drink {
      */
     @Override
     public boolean isAlcoholic() {
-        return false;
+        if(getAlcoholPercent() > 0){
+            return true;
+        } else return false;
     }
-
-    private static void excelReader(){
-
-        m = new File(path);
-        XSSFWorkbook workbook;
-
-        try{
-            workbook = new XSSFWorkbook(m);
-            XSSFSheet sheet = workbook.getSheetAt(0);
-            Iterator<Row> rowIterator = sheet.iterator();
-            int x = 0;
-
-            while(rowIterator.hasNext()){
-                Row row = rowIterator.next();
-                if(x > 0) {
-                    String shakename = row.getCell(0).getStringCellValue();
-                    String shakecal = row.getCell(1).getStringCellValue();
-                    String shakecarb = row.getCell(2).getStringCellValue();
-                    String shakefat = row.getCell(3).getStringCellValue();
-                    String shakeprotein = row.getCell(4).getStringCellValue();
-                    nutritionalTable.add(new ShakeNutritionTable(shakename,shakecal,shakecarb,shakefat,shakeprotein));
-                }
-                x++;
-                Iterator<Cell> cellIterator = row.cellIterator();
-
-                while (cellIterator.hasNext()) {
-                    Cell cell = cellIterator.next();
-                }
-            }
-        }catch (IOException | InvalidFormatException e){
-            System.out.println("Fail");
-        }
-    }
-
-    public static String getShakeNutritionalTable(String name) {
-        for (int i = 0; i < nutritionalTable.size(); i++) {
-            if (nutritionalTable.get(i).getName().contains(name)) return nutritionalTable.get(i).toString();
-            else return "Couldn't find Shake please try again \n";
-        }
-        return "";
-    }
-
 
 }
