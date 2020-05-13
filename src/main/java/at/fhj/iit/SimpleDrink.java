@@ -20,6 +20,11 @@ public class SimpleDrink extends Drink{
         this.l = l;
     }
 
+//    public static void main(String[] args) {
+//       SimpleDrink m = new SimpleDrink("cola",new Liquid("cola", 10, 10.0));
+//       System.out.print(m.getAlcoholPercent() + m.getVolume());
+//    }
+
     /**
      * Returns volume of liquid l
      *
